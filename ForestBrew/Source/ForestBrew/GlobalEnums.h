@@ -45,6 +45,7 @@ enum class EInvadingVillageType : uint8
 	TradingVillage,
 	HunterVillage,
 	FarmerVillage,
+	Random,
 };
 
 UENUM(BlueprintType)
@@ -80,13 +81,6 @@ enum class EDependencyType : uint8
 	Predecessor,
 	Optional,
 	ChoiceBased,
-};
-
-UENUM(BlueprintType)
-enum class EImpactType : uint8
-{
-	AffectEnding,
-	AffectAllianceQuests,
 };
 
 UENUM(BlueprintType)
@@ -138,10 +132,14 @@ enum class EEventType : uint8
 UENUM(BlueprintType)
 enum class ETriggerCondition : uint8
 {
+	None,
 	TimeOfDay,
 	PlayerLocation,
 	Allegiance,
 	QuestStatus,
+	TimeBased, 
+	PlayerAction,   
+	Environment     
 };
 
 UENUM(BlueprintType)
@@ -152,7 +150,6 @@ enum class EEventAction : uint8
 	UpdateHUD,
 	ChangeWeather,
 };
-
 
 class GlobalEnums
 {
