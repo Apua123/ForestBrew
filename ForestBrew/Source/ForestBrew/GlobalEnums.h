@@ -112,9 +112,19 @@ enum class EDialogueOutcome : uint8
 UENUM(BlueprintType)
 enum class EDialogueSpeaker : uint8
 {
+	None,
 	Player,
 	NPC1,
 	NPC2,
+};
+
+UENUM(BlueprintType)
+enum class EDialogueSpecialEvent : uint8
+{
+	None,
+	ChangeWeather,
+	ChangeTimeOfDay,
+	ChangeAllegiance,
 };
 
 UENUM(BlueprintType)
@@ -149,10 +159,4 @@ enum class EEventAction : uint8
 	StartQuest,
 	UpdateHUD,
 	ChangeWeather,
-};
-
-class GlobalEnums
-{
-public:
-	
 };
