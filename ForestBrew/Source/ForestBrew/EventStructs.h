@@ -54,9 +54,3 @@ struct FEventTriggerArray
 	UPROPERTY(BlueprintReadWrite)
 	TArray<FEventTrigger> EventTriggers;
 };
-
-class EventStructs
-{
-public:
-	
-};
