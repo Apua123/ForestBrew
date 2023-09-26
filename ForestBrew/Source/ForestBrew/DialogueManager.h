@@ -14,8 +14,6 @@ class FORESTBREW_API UDialogueManager : public UActorComponent
 	GENERATED_BODY()
 
 public:
-	UDialogueManager();
-	
 	UPROPERTY(BlueprintReadOnly)
 	TArray<FString> DialogueOptions;
 
@@ -27,7 +25,9 @@ public:
 
 	UPROPERTY(BlueprintReadOnly)
 	TMap<EInvadingVillageType, FDialogueStringArray> VillageBasedDialogues;
-	
+
+	UDialogueManager();
+	void LoadDialogue(EDialogueSpeaker NPC_Speaker);
 	void StartDialogue(EDialogueSpeaker NPC_Speaker);
 	void ChooseDialogueOption(int32 Index);
 	void ExecuteDialogueOutcome(EDialogueSpecialEvent SpecialEvent);

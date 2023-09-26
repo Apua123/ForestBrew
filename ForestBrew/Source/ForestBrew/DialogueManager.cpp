@@ -12,9 +12,17 @@ UDialogueManager::UDialogueManager() :
 	// Initialization code here
 }
 
+void UDialogueManager::LoadDialogue(EDialogueSpeaker NPC_Speaker)
+{
+	// Code to populate DialogueOptions
+}
+
 void UDialogueManager::StartDialogue(EDialogueSpeaker NPC_Speaker)
 {
-	// Logic here
+	CurrentSpeaker = NPC_Speaker;
+	LoadDialogue(NPC_Speaker);
+
+	// Continue with logic to display first dialogue
 }
 
 void UDialogueManager::ChooseDialogueOption(int32 Index)
