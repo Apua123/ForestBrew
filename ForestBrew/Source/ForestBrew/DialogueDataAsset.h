@@ -18,25 +18,22 @@ class FORESTBREW_API UDialogueDataAsset : public UDataAsset
 public:
 	UDialogueDataAsset();
 	
-	UPROPERTY(BlueprintReadOnly)
+	UPROPERTY(BlueprintReadOnly, Category = "Dialogue")
 	TArray<FDialogueBranch> DialogueBranches;
 
-	UPROPERTY(BlueprintReadOnly)
+	UPROPERTY(BlueprintReadOnly, Category = "Dialogue")
 	TMap<EInvadingVillageType, FDialogueStringArray> VillageSpecificDialogueMapping;
 
-	UPROPERTY(BlueprintReadOnly)
+	UPROPERTY(BlueprintReadOnly, Category = "Dialogue")
 	TMap<FString, int32> DialogueIDMappings;
 
-	UPROPERTY(BlueprintReadOnly)
+	UPROPERTY(BlueprintReadOnly, Category = "Dialogue")
 	TMap<FString, FMultiNPCDialogueBranch> MultiNPCDialogueMapping;
-
+	
 	// For future use
 	UPROPERTY(BlueprintReadOnly)
 	TMap<EAllegiance, FDialogueStringArray> AllegianceDialogueMapping;
-
-	UPROPERTY(BlueprintReadOnly)
-	TMap<EDialogueSpecialEvent, FDialogueStringArray> SpecialEventDialogueMapping;
-
+	
 	void InitializeDialogueData();
 	void InitializeDialogueBranches();
 	void InitializeVillageSpecificMappings();

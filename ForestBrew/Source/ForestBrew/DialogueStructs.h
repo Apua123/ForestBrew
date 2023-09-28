@@ -1,8 +1,54 @@
 ﻿#pragma once
 
 #include "CoreMinimal.h"
-#include "GlobalEnums.h"
 #include "DialogueStructs.generated.h"
+
+UENUM(BlueprintType)
+enum class EDialogueBranch : uint8
+{
+	None,
+	Neutral,
+	SideWithForestDenizen,
+	SideWithSettler,
+	EndGameChoice,
+	SpecialEvent
+};
+
+UENUM(BlueprintType)
+enum class EDialogueOutcome : uint8
+{
+	None,
+	GainRecipe,
+	GainInfo,
+	ChangeAllegiance,
+	ChangeWeather,
+	ChangeTimeOfDay,
+};
+
+UENUM(BlueprintType)
+enum class EDialogueSpeaker : uint8
+{
+	None,
+	Player,
+	ElderSageTree,
+	ForestDenizen,
+	HumanSettler
+};
+
+UENUM(BlueprintType)
+enum class EDialogueTimingType : uint8
+{
+	ShowForXSeconds,
+	PauseBeforeNextLine
+};
+
+UENUM(BlueprintType)
+enum class EPlayerResponse : uint8
+{
+	Response1,
+	Response2,
+	Response3,
+};
 
 USTRUCT(BlueprintType)
 struct FDialogueOption
@@ -20,6 +66,12 @@ struct FDialogueOption
 
 	UPROPERTY(BlueprintReadWrite)
 	EDialogueSpeaker SpeakerName;
+
+	UPROPERTY(BlueprintReadWrite)
+	float ShowForSeconds;
+
+	UPROPERTY(BlueprintReadWrite)
+	float PauseBeforeNext;
 };
 
 USTRUCT(BlueprintType)
@@ -38,10 +90,7 @@ struct FDialogueBranch
 
 	UPROPERTY(BlueprintReadWrite)
 	TArray<FDialogueOption> DialogueOptions;
-
-	UPROPERTY(BlueprintReadWrite)
-	EDialogueSpecialEvent SpecialEvent;
-
+	
 	UPROPERTY(BlueprintReadWrite)
 	float InitialDelay;
 

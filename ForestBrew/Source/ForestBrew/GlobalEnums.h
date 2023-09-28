@@ -92,42 +92,6 @@ enum class EEndingType : uint8
 };
 
 UENUM(BlueprintType)
-enum class EDialogueBranch : uint8
-{
-	Neutral,
-	SideWithForestDenizen,
-	SideWithSettler,
-	EndGameChoice,
-	SpecialEvent
-};
-
-UENUM(BlueprintType)
-enum class EDialogueOutcome : uint8
-{
-	GainRecipe,
-	GainInfo,
-	ChangeAllegiance,
-};
-
-UENUM(BlueprintType)
-enum class EDialogueSpeaker : uint8
-{
-	None,
-	Player,
-	NPC1,
-	NPC2,
-};
-
-UENUM(BlueprintType)
-enum class EDialogueSpecialEvent : uint8
-{
-	None,
-	ChangeWeather,
-	ChangeTimeOfDay,
-	ChangeAllegiance,
-};
-
-UENUM(BlueprintType)
 enum class EEventType : uint8
 {
 	Tutorial,

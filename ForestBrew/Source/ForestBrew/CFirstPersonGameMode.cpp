@@ -3,21 +3,31 @@
 
 #include "CFirstPersonGameMode.h"
 #include "GameStateManager.h"
+#include "CustomPlayerController.h"
 #include "UObject/ConstructorHelpers.h"
+#include "DialogueAssetManager.h"
 
 
 ACFirstPersonGameMode::ACFirstPersonGameMode()
 {
-	// Set the default pawn class to our Blueprinted character in the file path C:/Git Repository/tiimi2/ForestBrew/Content/FirstPerson/Blueprints/BP_FirstPersonCharacter.uasset
+	// Set the default pawn class to our Blueprinted character
 	static ConstructorHelpers::FClassFinder<APawn> PlayerPawnBPClass(TEXT("/Game/FirstPerson/Blueprints/BP_FirstPersonCharacter"));
 
-	if (PlayerPawnBPClass.Class != NULL)
+	if (PlayerPawnBPClass.Class != nullptr)
 	{
 		DefaultPawnClass = PlayerPawnBPClass.Class;
 	}
 
 	// Set default game state to our custom GameStateManager class
 	GameStateClass = AGameStateManager::StaticClass();
+
+	// Set default player controller to our blueprinted BP_CustomPlayerController class (which is a child of ACustomPlayerController)
+	static ConstructorHelpers::FClassFinder<APlayerController> PlayerControllerBPClass(TEXT("/Game/FirstPerson/Blueprints/BP_CustomPlayerController"));
+
+	if (PlayerControllerBPClass.Class != nullptr)
+	{
+		PlayerControllerClass = PlayerControllerBPClass.Class;
+	}
 }
 
 void ACFirstPersonGameMode::BeginPlay()
@@ -29,5 +39,6 @@ void ACFirstPersonGameMode::BeginPlay()
 
 	// Initialize the game state
 	GameStateManager->InitializeGameState();
+
 }
 

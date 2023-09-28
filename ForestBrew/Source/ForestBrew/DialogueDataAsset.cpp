@@ -22,7 +22,7 @@ void UDialogueDataAsset::InitializeDialogueBranches()
 	FishingVillageBranch.BranchID = "FishingVillageIntro";
 	FishingVillageBranch.DialogueText = "Welcome to the Fishing Village!";
 	FishingVillageBranch.IsEnding = false;
-	FishingVillageBranch.SpeakerName = EDialogueSpeaker::NPC1;
+	FishingVillageBranch.SpeakerName = EDialogueSpeaker::HumanSettler;
     
 	// Adding options to this branch
 	FDialogueOption Option1;
@@ -39,7 +39,7 @@ void UDialogueDataAsset::InitializeDialogueBranches()
 	TradingVillageBranch.BranchID = "TradingVillageIntro";
 	TradingVillageBranch.DialogueText = "Welcome to the Trading Village!";
 	TradingVillageBranch.IsEnding = false;
-	TradingVillageBranch.SpeakerName = EDialogueSpeaker::NPC1;
+	TradingVillageBranch.SpeakerName = EDialogueSpeaker::HumanSettler;
 
 	// Adding options to this branch
 	FDialogueOption Option2;
@@ -56,7 +56,7 @@ void UDialogueDataAsset::InitializeDialogueBranches()
 	HunterVillageBranch.BranchID = "HunterVillageIntro";
 	HunterVillageBranch.DialogueText = "Welcome to the Hunter Village!";
 	HunterVillageBranch.IsEnding = false;
-	HunterVillageBranch.SpeakerName = EDialogueSpeaker::NPC1;
+	HunterVillageBranch.SpeakerName = EDialogueSpeaker::HumanSettler;
 
 	// Adding options to this branch
 	FDialogueOption Option3;
@@ -73,7 +73,7 @@ void UDialogueDataAsset::InitializeDialogueBranches()
 	FarmerVillageBranch.BranchID = "FarmerVillageIntro";
 	FarmerVillageBranch.DialogueText = "Welcome to the Farmer Village!";
 	FarmerVillageBranch.IsEnding = false;
-	FarmerVillageBranch.SpeakerName = EDialogueSpeaker::NPC1;
+	FarmerVillageBranch.SpeakerName = EDialogueSpeaker::HumanSettler;
 
 	// Adding options to this branch
 	FDialogueOption Option4;
